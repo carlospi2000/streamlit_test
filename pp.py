@@ -6,6 +6,8 @@ st.header('Lanzar una moneda')
 
 # st.write('Esta aplicación aún no es funcional. En construcción.')
 
+chart = st.line_chart([0.5])
+
 def toss_coin(n): # función que emula el lanzamiento de una moneda
 
     trial_outcomes = scipy.stats.bernoulli.rvs(p=0.5, size=n)
@@ -30,3 +32,4 @@ start_button = st.button('Ejecutar')
 
 if start_button:
     st.write(f'Experimento con {number_of_trials} intentos en curso.')
+    mean = toss_coin(number_of_trials)
